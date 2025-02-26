@@ -13,7 +13,18 @@ do
 	case $REPLY in
 	1)
 		echo "Module installer :"
+
+		echo "verification symfony :"
+
+		is_exists=$(command -v symfony)
+		if [[ $? == 0 ]];
+		then  
+			echo "Symfony est installer"
+		else
+			echo "Symfony n'est pas installer, installation en cours !"
+		fi
 		;;
+
 	2)
 		echo "Veuilliez nomme votre projet :"
 		while [ -z $nameProject ]
